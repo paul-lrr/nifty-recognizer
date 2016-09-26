@@ -11,14 +11,7 @@ server.listen(80, function () {
 });
 
 io.set('transports', ['websocket']);
-/*io.use(function(socket, next){
-    if(socket.handshake.query.type == 'controller_master'){
-    	 controller_master = socket;
-		 socket.join('controller');
-    }
-	socket.join(socket.handshake.query.type);
-    return next();
-});*/
+
 
 io.on('connection', function (socket) {
 	
