@@ -23,3 +23,9 @@ To connect deckedbuilder to the overlay, you must add the following line:
 just above the `</config>` tag in the Deckedbuilder configuration file, located at:
 
 **Windows** - `C:\Users\<username>\AppData\Local\deckedbuilder\deckedbuilder.xml`
+
+### Tutorial Video
+
+<a href="http://www.youtube.com/watch?feature=player_embedded&v=euNHK_GJbvI" target="_blank"><img src="http://img.youtube.com/vi/euNHK_GJbvI/0.jpg" alt="LRRTechtorial - Card Recognizer" width="400" height="240" border="10" /></a>
+
+LRRTechtorial - Card Recognizer
