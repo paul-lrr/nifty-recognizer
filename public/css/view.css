@@ -1,0 +1,17 @@
+body, html {
+	margin: 0;
+	height: 100%;
+}
+.hide {
+	display: none;
+}
+#display,
+#display-override {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	max-width: 100%;
+	width: auto;
+	border-radius: 13px;
+	}
