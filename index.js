@@ -17,7 +17,10 @@ io.on('connection', function (socket) {
 	
 	app.get('/cardmatch/:id', function (req, res) {
 	  res.send(req.params.id);
-	  if(!isNaN(req.params.id)){
+	  if(isNaN(req.params.id)){
+		  socket.broadcast.emit('card_image', {'auto':true,'src':'http://localhost/cards/'+req.params.id+'.jpg'});
+	  }
+	  else {
 			socket.broadcast.emit('card_image', {'auto':true,'src':'http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid='+req.params.id+'&type=card'});
 	  }
 	});
