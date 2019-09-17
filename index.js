@@ -28,7 +28,4 @@ io.on('connection', function (socket) {
 	socket.on('card_image', function(msg){
 		socket.broadcast.emit('card_image', msg);
 	  });
-	
-
-  
 });
