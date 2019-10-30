@@ -45,16 +45,20 @@ The method that DeckedBuilder uses for card recognition is quite resource intens
 
 ### Making Custom orb Files
 
-unzip the `orb_maker_v3.zip` file in `extras`. orb_maker.exe is a windows command line program that creates a new orb file for DeckedBuilder based on an arbitrary set of images. To make a custom orb file using all the images in the current directory, use this command:
-orb_maker.exe <orb name>.orb \*.jpg
-From various experiments, I can tell you that DeckedBuilder seems to work best with input image that are around 220px-250px across. The card images in Gatherer are 223x310 so they work fine.
+unzip the `orb_maker_v3.zip` file in `extras`. orb_maker.exe is a windows command line program that creates a new orb file for DeckedBuilder based on an arbitrary set of images. To make a custom orb file using all the jpg images in the current directory, use this command:
+
+```
+orb_maker.exe <orb name>.orb *.jpg
+```
+
+From various experiments, I can tell you that DeckedBuilder seems to work best with input image that are around 220px-250px across. The card images in Gatherer are 223x310 so they work fine. I don't know what the upper limit of cards that DeckedBuilder can have loaded into its search database, but I try to keep it below 600 images for snappy performance. Sometimes this means having separate orb files for each deck and switching between games.
 
 ### Using Custom orb Files
 
 To use your custom orb file, go to the cardcam2 (beta) screen in DeckedBuilder as you would if you were recognizing an existing set, but instead of checking the boxes on the left, hit **CTRL-O** which will open up the custom orb open dialog box. choose your orb file and it should load. You can load multiple orb files at the same time (for different decks, etc), Hit **CTRL-U** to unload all custom orbs.
 
-The built-in DeckedBuilder sets send the card's multiverse id to the overlay, which it then attempts to load from Gatherer. When you are using a custom orb file, the overlay instead receives the filename of the image that was processed with orb_maker. The way I have setup the nifty-recognizer server is that it looks for those images in the "public/cards" folder.
-eg. if the image processed by orb_maker is "lightning-bolt.jpg", the overlay will be trying to load "http://localhost/cards/lightning-bolt.jpg"
+The built-in DeckedBuilder sets send the card's multiverse id to the overlay, which it then attempts to load from Gatherer. When you are using a custom orb file, the overlay instead receives the filename of the image that was processed with orb_maker. The way I have setup the nifty-recognizer server is that it looks for those images in the `public/cards` folder.
+eg. if the image processed by orb_maker is `lightning-bolt.jpg`, the overlay will be trying to load `http://localhost/cards/lightning-bolt.jpg`
 
 ## Tutorial Video
 
